@@ -15,7 +15,7 @@ const [page, setPage] =useState(0);
 
 useEffect (()=>{
 
-  const pages =Math.ceil(5/8)
+  const pages =Math.ceil(5/4)
     // latter we will use backend data count
     setPageCount(pages)
 },[page])
@@ -44,18 +44,27 @@ useEffect (()=>{
               ))
             }
              <Col lg="12">
-             <div className='pagination d-flex align-items-center justify-content-center mt-4 gap-3'>
-{[...Array(pageCount).keys().map(number=>(
-  <span  key={number} onClick={number}>
+
+             <div className="pagination d-flex align-items-center 
+             justify-content-center mt-4 gap-3">
+{[...Array(pageCount).keys()].map(number=>(
+  <span  
+  key={number} 
+  onClick={() => setPage(number)}
+   className={page === number ? "active__page" : " "}
+
+  >
     {number +1}
   </span>
-))]}
+))}
 
              </div>
              </Col>
           </Row>
         </Container>
       </section>
+<Newsletter />
+
     </>
   )
 }
