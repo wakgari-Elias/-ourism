@@ -15,10 +15,9 @@ const TourDetails = () => {
 
 
  const [tourRating, setTourRating] = useState(null);
- const handleRatingClick = (rating) => {
-  setTourRating(rating);
-  // Update UI or perform other actions based on the selected rating
-};
+
+
+
 
 
 
@@ -43,8 +42,6 @@ const TourDetails = () => {
     // later we will call our API to save the review
 
   }
-
-
 
 
 
@@ -89,11 +86,11 @@ const TourDetails = () => {
 
   <Form onSubmit={submitHandler}>
 <div  className='d-flex align-items-center gap-3 mb-4 rating__group'>
-  <span onClick={()=>handleRatingClick(1)}> 1<i class="ri-star-s-fill"></i> </span>
-  <span  onClick={()=>handleRatingClick(2)}> 2<i class="ri-star-s-fill"></i> </span>
-  <span onClick={()=>handleRatingClick(3)} > 3<i class="ri-star-s-fill"></i> </span>
-  <span onClick={()=>handleRatingClick(4)}> 4<i class="ri-star-s-fill"></i> </span>
-  <span onClick={()=>handleRatingClick(5)}> 5<i class="ri-star-s-fill"></i>  </span>
+  <span onClick={()=>setTourRating(1)}> 1<i class="ri-star-s-fill"></i> </span>
+  <span  onClick={()=>setTourRating(2)}> 2<i class="ri-star-s-fill"></i> </span>
+  <span onClick={()=>setTourRating(3)} > 3<i class="ri-star-s-fill"></i> </span>
+  <span onClick={()=>setTourRating(4)}> 4<i class="ri-star-s-fill"></i> </span>
+  <span onClick={()=>setTourRating(5)}> 5<i class="ri-star-s-fill"></i>  </span>
 </div>
 
  <div className='review__input'>
